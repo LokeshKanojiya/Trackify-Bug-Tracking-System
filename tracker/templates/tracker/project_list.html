@@ -1,0 +1,28 @@
+{% extends 'tracker/base.html' %}
+{% block title %}Projects - Bug Tracker{% endblock %}
+{% block content %}
+{% load static %}
+<div class="d-flex justify-content-between mb-4">
+    <h2>Projects</h2>
+    {% if user.role == 'admin' %}
+    <a href="{% url 'project_create' %}" class="btn btn-primary">Create Project</a>
+    {% endif %}
+</div>
+<div class="row">
+    {% for project in projects %}
+    <div class="col-md-4 mb-3">
+        <div class= "card project-card h-100">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">{{ project.name }}</h5>
+                <h6 class="card-subtitle mb-3 text-muted">Status: {{ project.get_status_display }}</h6>
+                <p class="card-text text-truncate">{{ project.description }}</p>
+                <a href="{% url 'ticket_list' %}?project={{ project.id }}" class="card-link btn btn-sm btn-outline-primary">View Tickets</a>
+            </div>
+            <div class="card-footer text-muted small bg-white border-top-0">Started: {{ project.start_date }}</div>
+        </div>
+    </div>
+    {% empty %}
+    <p class="text-muted">No projects available.</p>
+    {% endfor %}
+</div>
+{% endblock %}

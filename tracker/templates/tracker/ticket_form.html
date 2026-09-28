@@ -1,0 +1,22 @@
+{% extends 'tracker/base.html' %}
+{% block title %}{% if object %}Edit Ticket{% else %}Report Bug{% endif %} - Bug Tracker{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h2 class="mb-3">{% if object %}Edit Ticket: <span class="text-primary">{{ object.title }}</span>{% else %}Report New <span class="text-danger">Bug</span>{% endif %}</h2>
+        <div class="card shadow">
+            <div class="card-body p-4">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <hr class="my-4">
+                    <div class="d-flex align-items-center">
+                        <button type="submit" class="btn btn-danger shadow-sm px-4">{% if object %}Save Changes{% else %}Submit Bug Report{% endif %}</button>
+                        <a href="javascript:history.back()" class="btn btn-light ms-3 shadow-sm border">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
