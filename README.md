@@ -95,6 +95,33 @@ Trackify-Bug-Tracking-System/
 
    http://127.0.0.1:8000/
 
+   
+## Screenshots
+
+Here are some screenshots of the Trackify application.
+
+### 1. Dashboard
+
+![Trackify Dashboard](screenshots/Screenshot2026-03-22 173320.png)
+
+### 2. Bug Tracking
+
+![Trackify Bug Tracking](screenshots/Screenshot2026-03-22 173421.png)
+
+### 3. Project Management
+
+![Trackify Project Management](screenshots/Screenshot2026-03-22 173347.png)
+
+### 4. Login page
+
+![Trackify Login page](screenshots/Screenshot2026-03-22 173228.png)
+
+### 5. Register page
+
+![Trackify Register page](screenshots/Screenshot2026-03-22 173551.png)
+
+
+
 ## Future Improvements
 
 - Improve the user interface and dashboard experience.
